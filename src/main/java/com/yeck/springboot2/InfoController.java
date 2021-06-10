@@ -2,6 +2,8 @@ package com.yeck.springboot2;
 
 import entity.InfoBack1;
 import entity.InfoBack2;
+import entity.InfoBack3;
+import entity.InfoBack4;
 import net.minidev.json.JSONObject;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -90,5 +92,19 @@ public class InfoController {
             jsonParam.replace("idNo", "%");
         }
         return session.selectList(statement, jsonParam);
+    }
+
+
+    @GetMapping("/getStatus")
+    public List<InfoBack3> getStatus(){
+        String statement = "com.yeck.springboot2.Mapper.infoMapper.getStatus";
+        return session.selectList(statement, null);
+    }
+
+
+    @GetMapping("/getAbsence")
+    public List<InfoBack4> getAbsence(){
+        String statement = "com.yeck.springboot2.Mapper.infoMapper.getAbsence";
+        return session.selectList(statement, null);
     }
 }

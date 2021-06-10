@@ -31,4 +31,13 @@
     <select id="filterStudent" parameterType="net.minidev.json.JSONObject" resultType="entity.InfoBack1">
         select * from students where `name` like #{name} and `type` like #{type} and `age` like #{age} and `sex` like #{sex} and `idNo` like #{idNo} and `Sclass` like #{Sclass}
     </select>
+
+    <select id="getStatus" parameterType="String" resultType="entity.InfoBack3">
+        select * from status
+    </select>
+
+
+    <select id="getAbsence" parameterType="String" resultType="entity.InfoBack4">
+        select * from absence
+    </select>
 </mapper>
